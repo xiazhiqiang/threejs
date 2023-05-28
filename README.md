@@ -1,6 +1,6 @@
 # threejs
 
-threejs 学习
+从 2023 年 5 月 27 日 开始学习和探索 Three.js。
 
 ## 本地开发
 

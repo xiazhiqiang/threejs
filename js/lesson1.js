@@ -1,19 +1,13 @@
 import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 
-// 结合threejs中文网教程入门1-6，实践一下
+// 结合threejs中文网教程入门，实践一下渲染基本物体，添加透视相机对准物体，添加辅助和相机控制器
 
 // 1. 创建一个场景
 const scene = new THREE.Scene();
 
 const axesHelper = new THREE.AxesHelper(20); // 添加辅助
 scene.add(axesHelper);
-
-// // 添加光源
-// const pointLight = new THREE.PointLight(0xffffff, 1.0);
-// pointLight.intensity = 1.0;
-// pointLight.position.set(6, 6, 6);
-// scene.add(pointLight);
 
 // 2. 创建一个三维物体
 const geometry = new THREE.BoxGeometry(); // 创建一个几何体
@@ -40,7 +34,6 @@ camera.lookAt(mesh.position); // 将相机对准物体
 // 4. 创建渲染器
 const renderer = new THREE.WebGLRenderer();
 document.getElementById("webgl").appendChild(renderer.domElement); // 将拍照结果渲染到Canvas画布中
-
 renderer.setSize(window.innerWidth, window.innerHeight); // 设置渲染器
 renderer.render(scene, camera); // 通过透视相机对物体进行“拍照”
 

@@ -7,6 +7,7 @@ const scene = new THREE.Scene();
 
 // 物体
 const geometry = new THREE.BoxGeometry(4, 4, 4);
+// 漫反射材质
 const material = new THREE.MeshLambertMaterial({
   color: "#ff0",
   transparent: true,
@@ -33,6 +34,16 @@ scene.add(pointLightHelper);
 // scene.add(ambientLight);
 // const ambientLightHelper = new THREE.PointLightHelper(ambientLight); // 添加点光源查看器
 // scene.add(ambientLightHelper);
+
+// 平行光
+const directionalLight = new THREE.DirectionalLight("#0ff", 1);
+directionalLight.position.set(0, 2, 2);
+directionalLight.target = mesh;
+scene.add(directionalLight);
+const directionalLightHelper = new THREE.DirectionalLightHelper(
+  directionalLight
+); // 添加平行光源查看器
+scene.add(directionalLightHelper);
 
 // 透视相机
 const camera = new THREE.PerspectiveCamera(

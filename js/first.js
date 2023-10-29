@@ -11,10 +11,10 @@ const scene = new THREE.Scene();
 
 // 创建相机，使用透视相机
 const camera = new THREE.PerspectiveCamera(
-  75,
-  window.innerWidth / window.innerHeight,
-  0.1,
-  1000
+  75, // 视场角度
+  window.innerWidth / window.innerHeight, // 屏幕宽高比
+  0.1, // 近裁截面
+  1000 // 远裁截面
 );
 
 // 创建渲染器

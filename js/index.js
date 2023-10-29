@@ -1,3 +1,5 @@
-// import "./js/first";
-// import "./js/line";
-import "./load.js";
+// import "./first";
+// import "./line";
+// import "./load.js";
+
+import "./lesson1";

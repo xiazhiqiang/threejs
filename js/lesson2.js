@@ -28,22 +28,29 @@ scene.add(pointLight);
 const pointLightHelper = new THREE.PointLightHelper(pointLight); // 添加点光源查看器
 scene.add(pointLightHelper);
 
-// // 环境光
-// const ambientLight = new THREE.AmbientLight("#fff", 1);
-// ambientLight.position.set(10, 0, 0);
-// scene.add(ambientLight);
-// const ambientLightHelper = new THREE.PointLightHelper(ambientLight); // 添加点光源查看器
-// scene.add(ambientLightHelper);
+// 环境光
+const ambientLight = new THREE.AmbientLight("#fff", 1);
+ambientLight.position.set(10, 0, 0);
+scene.add(ambientLight);
+const ambientLightHelper = new THREE.PointLightHelper(ambientLight); // 添加点光源查看器
+scene.add(ambientLightHelper);
 
 // 平行光
 const directionalLight = new THREE.DirectionalLight("#0ff", 1);
-directionalLight.position.set(0, 2, 2);
+directionalLight.position.set(0, 2, 4);
 directionalLight.target = mesh;
 scene.add(directionalLight);
 const directionalLightHelper = new THREE.DirectionalLightHelper(
   directionalLight
 ); // 添加平行光源查看器
 scene.add(directionalLightHelper);
+
+// 聚光源
+const spotLight = new THREE.SpotLight("#f0f", 1);
+spotLight.position.set(0, 10, 10);
+scene.add(spotLight);
+const spotLightHelper = new THREE.SpotLightHelper(spotLight); // 添加聚光源查看器
+scene.add(spotLightHelper);
 
 // 透视相机
 const camera = new THREE.PerspectiveCamera(

@@ -15,6 +15,7 @@ const material = new THREE.MeshLambertMaterial({
   color: "#ff0",
   transparent: true,
   opacity: 0.5,
+  side: THREE.DoubleSide, // 多面
 });
 const mesh = new THREE.Mesh(geometry, material);
 mesh.position.set(-10, 2, 2);
@@ -70,6 +71,8 @@ scene.add(camera);
 const renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.render(scene, camera);
+renderer.setPixelRatio(window.devicePixelRatio);
+renderer.setClearColor("#000", 1); //设置背景颜色
 document.getElementById("webgl").appendChild(renderer.domElement);
 
 const stats = new Stats();

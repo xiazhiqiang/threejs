@@ -1,6 +1,10 @@
-// import "./first";
-// import "./line";
-// import "./load.js";
+import { getQuery } from "./utils/query";
 
-// import "./lesson1";
-import "./lesson2";
+const { q } = getQuery();
+
+if (q) {
+  try {
+    // 根据参数，动态引用文件运行
+    await import(`./${q}`);
+  } catch (e) {}
+}

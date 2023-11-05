@@ -38,7 +38,7 @@ camera.lookAt(0, 0, 0);
 let model = null;
 try {
   // 加载模型
-  model = await loadModel("/gltf/F16.gltf");
+  model = await loadModel("/gltf/J16.gltf");
 } catch (e) {
   console.error("error load model", e);
 }

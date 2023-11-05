@@ -2,8 +2,6 @@ import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 
-const loader = new GLTFLoader();
-
 const scene = new THREE.Scene();
 
 // 坐标轴观察器
@@ -38,6 +36,7 @@ controls.addEventListener("change", function () {
   renderer.render(scene, camera);
 });
 
+const loader = new GLTFLoader();
 loader.load("/gltf/J16.gltf", function (gltf) {
   // console.log("控制台查看加载gltf文件返回的对象结构", gltf);
   // console.log("gltf对象场景属性", gltf.scene);
@@ -50,6 +49,7 @@ loader.load("/gltf/J16.gltf", function (gltf) {
       obj.material.color.set("#0ff");
     }
   });
+  renderer.render(scene, camera);
 });
 
 function animate() {

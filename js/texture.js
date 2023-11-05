@@ -17,7 +17,7 @@ console.log("uv", geometry.attributes.uv);
 
 // 创建纹理加载器
 const textLoader = new THREE.TextureLoader();
-const texture = textLoader.load("../assets/img/OIP.jpeg");
+const texture = textLoader.load("/img/OIP.jpeg");
 
 // 设置阵列模式
 texture.wrapS = THREE.RepeatWrapping;
@@ -52,7 +52,7 @@ camera.lookAt(0, 0, 0);
 const renderer = new THREE.WebGLRenderer();
 renderer.setClearColor("#000");
 renderer.setSize(window.innerWidth, window.innerHeight);
-renderer.render(scene, camera);
+// renderer.render(scene, camera);
 document.getElementById("webgl").appendChild(renderer.domElement);
 
 // 设置相机控件
